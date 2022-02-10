@@ -1,0 +1,31 @@
+{
+  "name": "eip-2536-demo",
+  "version": "1.0.0",
+  "description": "EIP-2535 Demo Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderighter2/eip-2535-demo.git"
+  },
+  "author": "coderighter2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coderighter2/eip-2535-demo/issues"
+  },
+  "homepage": "https://github.com/coderighter2/eip-2535-demo#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "dotenv": "^8.6.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.1",
+    "hardhat": "^2.4.1",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "standard": "^16.0.3"
+  }
+}
