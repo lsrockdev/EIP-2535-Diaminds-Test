@@ -5,9 +5,8 @@ require('dotenv').config()
 
 const { getSelectors, FacetCutAction } = require('./libraries/diamond.js')
 
-async function deployVersion2 (address = null) {
+async function deployVersion3 (address = null) {
   const accounts = await ethers.getSigners()
-  const contractOwner = accounts[0]
 
   let diamondAddress = address
   if (!diamondAddress) {
@@ -23,7 +22,7 @@ async function deployVersion2 (address = null) {
   let tx = await diamondCut.diamondCut(
     [{
       facetAddress: facet.address,
-      action: FacetCutAction.Add,
+      action: FacetCutAction.Replace,
       functionSelectors: getSelectors(facet)
     }], ethers.constants.AddressZero, '0x')
   receipt = await tx.wait()
@@ -37,7 +36,7 @@ async function deployVersion2 (address = null) {
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 if (require.main === module) {
-  deployVersion2()
+  deployVersion3()
     .then(() => process.exit(0))
     .catch(error => {
       console.error(error)
@@ -45,4 +44,4 @@ if (require.main === module) {
     })
 }
 
-exports.deployVersion2 = deployVersion2
+exports.deployVersion3 = deployVersion3

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/coderighter2/eip-2535-demo#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.8",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^4.2.0",
     "chai": "^4.3.4",

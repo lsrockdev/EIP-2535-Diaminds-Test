@@ -49,8 +49,6 @@ async function deployDiamond () {
   }
 
   // upgrade diamond with facets
-  console.log('')
-  console.log('Diamond Cut:', cut)
   const diamondCut = await ethers.getContractAt('IDiamondCut', diamond.address)
   let tx
   let receipt

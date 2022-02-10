@@ -6,7 +6,6 @@ const { getSelectors, FacetCutAction } = require('./libraries/diamond.js')
 
 async function deployVersion2 (address = null) {
   const accounts = await ethers.getSigners()
-  const contractOwner = accounts[0]
 
   let diamondAddress = address
   if (!diamondAddress) {
@@ -21,7 +20,7 @@ async function deployVersion2 (address = null) {
   let tx = await diamondCut.diamondCut(
     [{
       facetAddress: facet.address,
-      action: FacetCutAction.Add,
+      action: FacetCutAction.Replace,
       functionSelectors: getSelectors(facet)
     }], ethers.constants.AddressZero, '0x');
   receipt = await tx.wait()
